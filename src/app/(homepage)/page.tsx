@@ -1,7 +1,7 @@
-import Page from "@/app/(homepage)/components/header";
+import Header from "@/app/(homepage)/components/header";
 import Link from "next/link";
 
-const page = () => {
+const Home = () => {
   return (
     <section className="relative min-h-screen">
       {/* Layer 1: background image */}
@@ -18,7 +18,7 @@ const page = () => {
 
       {/* Layer 4: content */}
       <div className="flex flex-col">
-        <Page />
+        <Header />
         <div className="relative flex min-h-screen gap-8 mx-8 flex-col items-center">
           <p className="mx-8 text-5xl font-bold uppercase text-center tracking-[0.40em] text-yellow-400">
             Tatum Bank Tech Graduate Trainees
@@ -53,4 +53,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Home;

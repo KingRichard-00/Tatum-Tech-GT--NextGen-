@@ -12,11 +12,11 @@ const links = [
     href: "/tracks",
     label: "Our Tracks",
     children: [
-      { href: "/uiux", label: "UI/UX Design" },
-      { href: "/mobile", label: "Mobile Development" },
-      { href: "/frontend", label: "Frontend Development" },
-      { href: "/backend", label: "Backend Development" },
-      { href: "/quality-assurance", label: "Quality Assurance" },
+      { href: "/tracks/uiux", label: "UI/UX Design" },
+      { href: "/tracks/mobile", label: "Mobile Development" },
+      { href: "/tracks/frontend", label: "Frontend Development" },
+      { href: "/tracks/backend", label: "Backend Development" },
+      { href: "/tracks/quality-assurance", label: "Quality Assurance" },
     ],
   },
   { href: "/memories", label: "Memories" },
@@ -29,9 +29,7 @@ const NavLinks = ({ mobile = false }) => {
     <nav className="w-full text-white">
       <ul
         className={
-          mobile
-            ? "flex flex-col items-center gap-6"
-            : "flex justify-between mr-16"
+          mobile ? "flex flex-col items-center gap-6" : "flex justify-between"
         }
       >
         {links.map(({ href, label, children }) => {
@@ -40,30 +38,34 @@ const NavLinks = ({ mobile = false }) => {
           return (
             <li
               key={href}
-              className={`relative group rounded-full px-4 py-2 transition-colors hover:text-yellow-300 ${
-                mobile ? "flex flex-col items-center" : ""
-              } ${isActive ? "bg-yellow-400/15 text-yellow-300 ring-1 ring-yellow-400/40 backdrop-blur-sm" : ""}`}
+              className={`relative group ${mobile ? "flex flex-col items-center" : ""}`}
             >
               <Link
                 href={href}
                 aria-current={isActive ? "page" : undefined}
-                className="relative inline-block"
+                className={`inline-block rounded-lg px-6 py-2 transition-colors hover:text-yellow-300 group-hover:text-yellow-300 ${
+                  isActive
+                    ? "bg-yellow-400/15 text-yellow-300 ring-1 ring-yellow-400/40 backdrop-blur-sm"
+                    : ""
+                }`}
               >
-                {label}
-                {children && (
-                  <ChevronDownIcon
-                    size={16}
-                    className="absolute left-full top-1/2 ml-1 -translate-y-1/2"
-                  />
-                )}
+                <span className="relative inline-block">
+                  {label}
+                  {children && (
+                    <ChevronDownIcon
+                      size={16}
+                      className="absolute left-full top-1/2 ml-1 -translate-y-1/2"
+                    />
+                  )}
+                </span>
               </Link>
 
               {children && (
                 <ul
                   className={
                     mobile
-                      ? "mt-3 hidden flex-col items-center gap-3 text-sm text-white/80 group-hover:flex group-focus-within:flex min-w-48 flex-col rounded-lg bg-[#081230]/95 py-2 shadow-lg backdrop-blur"
-                      : "invisible absolute left-0 top-full z-30 flex min-w-48 flex-col rounded-lg bg-[#081230]/95 py-2 opacity-0 shadow-lg backdrop-blur transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
+                      ? "mt-2 hidden flex-col items-center gap-3 text-sm text-white/80 group-hover:flex group-focus-within:flex min-w-48 flex-col rounded-lg bg-[#081230]/95 py-2 shadow-lg backdrop-blur"
+                      : "invisible absolute left-0 mt-1 top-full z-30 flex min-w-48 flex-col rounded-lg bg-[#081230]/95 py-2 opacity-0 shadow-lg backdrop-blur transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
                   }
                 >
                   {children.map((child) => {
@@ -104,12 +106,19 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="w-2/4 flex justify-end">
+      <nav className="w-4/5 flex justify-end">
         <div className="hidden w-full sm:flex justify-between">
           <NavLinks />
         </div>
         <div className="sm:hidden">
-          <button onClick={toggleNavBar}>{isOpen ? <X /> : <Menu />}</button>
+          <button
+            onClick={toggleNavBar}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            className="flex h-11 w-11 items-center justify-center rounded-lg bg-transparent text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 active:scale-95"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </nav>
       {isOpen && (
