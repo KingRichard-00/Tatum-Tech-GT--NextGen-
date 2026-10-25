@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, ChevronDownIcon } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const links = [
   { href: "/", label: "Home" },
@@ -24,6 +24,26 @@ const links = [
 
 const NavLinks = ({ mobile = false }) => {
   const pathname = usePathname();
+
+  const [tracksOpen, setTracksOpen] = useState(false);
+  const tracksRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        tracksRef.current &&
+        !tracksRef.current.contains(event.target as Node)
+      ) {
+        setTracksOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="w-full text-white">
@@ -64,7 +84,7 @@ const NavLinks = ({ mobile = false }) => {
                 <ul
                   className={
                     mobile
-                      ? "mt-2 hidden flex-col items-center gap-3 text-sm text-white/80 group-hover:flex group-focus-within:flex min-w-48 flex-col rounded-lg bg-[#081230]/95 py-2 shadow-lg backdrop-blur"
+                      ? "mt-2 hidden flex-col items-center gap-3 text-sm text-white/80 group-hover:flex group-focus-within:flex min-w-48 rounded-lg bg-[#081230]/95 py-2 shadow-lg backdrop-blur"
                       : "invisible absolute left-0 mt-1 top-full z-30 flex min-w-48 flex-col rounded-lg bg-[#081230]/95 py-2 opacity-0 shadow-lg backdrop-blur transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
                   }
                 >
