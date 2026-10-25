@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, ChevronDownIcon } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
 const links = [
   { href: "/", label: "Home" },
@@ -24,26 +24,6 @@ const links = [
 
 const NavLinks = ({ mobile = false }) => {
   const pathname = usePathname();
-
-  const [tracksOpen, setTracksOpen] = useState(false);
-  const tracksRef = useRef<HTMLLIElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        tracksRef.current &&
-        !tracksRef.current.contains(event.target as Node)
-      ) {
-        setTracksOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <nav className="w-full text-white">

@@ -1,5 +1,6 @@
 import Header from "@/app/(homepage)/components/header";
 import Link from "next/link";
+import Background from "./components/background";
 
 const Home = () => {
   return (
