@@ -4,14 +4,14 @@ const footer = () => {
   return (
     <div className="flex flex-col text-white pt-4 px-6 bg-gradient-to-br from-[#001a33] via-[#002248] to-[#00142b] border-t-2 border-black/60">
       <div className="flex justify-between pb-2 gap-6">
-        <div className="text-sm w-1/2">
-          <span className="text-yellow-300 text-lg font-bold">
+        <div className="text-xs sm:text-sm w-1/2">
+          <span className="text-base text-yellow-300 sm:text-lg font-bold">
             Tatum Bank Tech Graduate Trainees
           </span>
           <br /> Celebrating talent, growth, and innovation.
         </div>
-        <div className="text-sm w-1/2">
-          <span className="text-base text-yellow-300">
+        <div className="text-xs sm:text-sm w-1/2">
+          <span className="text-sm sm:text-base text-yellow-300">
             Built on teamwork. Driven by innovation.
           </span>
           <br />A showcase of the people, skills, and experiences behind the

@@ -26,10 +26,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <div className="flex items-center justify-between bg-gradient-to-br from-[#001a33] via-[#002248] to-[#00142b] border-t-2 border-black/60">
+        <div className="">
           <Header />
         </div>
-        <div className="flex-1">{children}</div>
+        <div className="flex-1"> {children} </div>
         <div>
           <Footer />
         </div>

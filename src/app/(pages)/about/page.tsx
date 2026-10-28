@@ -1,5 +1,9 @@
 import React from "react";
 
+export const metadata = {
+  title: "About Us | Tatum Bank Tech Graduate Trainees",
+};
+
 const page = () => {
   return (
     <div className="flex flex-col">

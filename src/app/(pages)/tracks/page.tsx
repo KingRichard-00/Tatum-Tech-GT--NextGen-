@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Our Tracks | Tatum Bank Tech Graduate Trainees",
+};
+
 const page = () => {
   return (
     <div className="flex flex-col gap-4 p-6">
