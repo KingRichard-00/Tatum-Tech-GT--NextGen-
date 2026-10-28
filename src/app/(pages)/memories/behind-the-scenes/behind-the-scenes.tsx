@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const graduationPics = [
   "/images/memories/behind-the-scenes/behind-the-scenes (1).jpg",
-  "/images/memories/behind-the-scenes/behind-the-scenes (2).jpg",
+  "/images/memories/behind-the-scenes/behind-the-scenes (2).png",
   "/images/memories/behind-the-scenes/behind-the-scenes (4).jpg",
   "/images/memories/behind-the-scenes/behind-the-scenes (5).jpg",
   "/images/memories/behind-the-scenes/behind-the-scenes (6).jpg",
