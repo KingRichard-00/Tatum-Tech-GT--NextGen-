@@ -5,7 +5,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return <div>Our Memories</div>;
+  return <div></div>;
 };
 
 export default page;

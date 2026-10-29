@@ -11,7 +11,7 @@ const page = () => {
       <div className="flex flex-col gap-2 justify-start">
         <div className="bg-yellow-300 h-2 w-16 rounded-lg"></div>
         <div className="font-bold text-[#001a33] text-4xl">Our Tracks</div>
-        <div className="text-slate-700 ">
+        <div className="text-slate-700">
           Five paths. One team. Each track brings unique skills, perspectives{" "}
           <br />
           and energy - all working towards a shared vision .

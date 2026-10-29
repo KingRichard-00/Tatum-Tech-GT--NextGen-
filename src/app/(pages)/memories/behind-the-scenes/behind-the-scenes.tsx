@@ -59,9 +59,9 @@ const Memories = () => {
       <Image
         src={graduationPics[currentIndex]}
         alt={`Graduation memory ${currentIndex + 1}`}
-        width={1000}
-        height={700}
-        className="h-[500px] w-[800px] rounded-lg object-scale-down"
+        width={400}
+        height={250}
+        className="border border-gray-300 rounded-lg object-cover md:object-contain"
       />
 
       {currentIndex < graduationPics.length - 1 && (

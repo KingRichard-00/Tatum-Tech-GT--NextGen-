@@ -29,7 +29,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div className="">
           <Header />
         </div>
-        <div className="flex-1"> {children} </div>
+        <div className="flex-1 bg-gradient-to-b from-[#F4F7FB] to-white">
+          {" "}
+          {children}{" "}
+        </div>
         <div>
           <Footer />
         </div>

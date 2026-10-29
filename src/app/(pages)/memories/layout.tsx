@@ -18,10 +18,11 @@ export default function MemoriesLayout({
   const pathname = usePathname();
 
   return (
-    <div className="p-8 flex flex-col gap-4">
-      <div className="flex flex-col gap-2 text-indigo-800">
-        <div className="text-4xl">Our Memories</div>
-        <div className="text-base">
+    <div className="p-6 flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
+        <div className="bg-yellow-300 h-2 w-16 rounded-lg"></div>
+        <div className="font-bold text-[#001a33] text-4xl">Our Memories</div>
+        <div className="text-slate-700">
           Moments that brought us closer - learning, teamwork and a little fun
           along the way.
         </div>
@@ -47,7 +48,6 @@ export default function MemoriesLayout({
           );
         })}
       </div>
-
       {children}
     </div>
   );

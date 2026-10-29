@@ -29,9 +29,9 @@ const Home = () => {
             <span className="text-yellow-400">One Mission.</span>
           </h1>
           <p className="mt-6 max-w-[600] text-center text-white/90">
-            We are a cohort of passionate and driven graduate trainees, coming
-            together to build a brighter future in banking, technology and
-            customer experience.
+            We are a cohort of passionate and result-driven graduate trainees,
+            coming together to build a brighter future in banking, technology
+            and customer experience.
           </p>
 
           <div className="mt-8 flex gap-4">
