@@ -17,7 +17,7 @@ export default async function PhotoModal({
       <Image
         alt={photo.name}
         src={photo.src}
-        className="w-full h-[400px] object-cover aspect-square"
+        className="w-full md:h-[400px] object-cover aspect-square"
       />
 
       <div className="bg-white p-4">
