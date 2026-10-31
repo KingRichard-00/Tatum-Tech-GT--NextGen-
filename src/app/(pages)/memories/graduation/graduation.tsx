@@ -35,7 +35,6 @@ const graduationPics = [
   "/images/memories/graduation/graduation (28).jpg",
   "/images/memories/graduation/graduation (29).jpg",
   "/images/memories/graduation/graduation (30).jpg",
-
   "/images/memories/graduation/graduation (31).jpg",
   "/images/memories/graduation/graduation (32).jpg",
   "/images/memories/graduation/graduation (33).jpg",
@@ -80,7 +79,7 @@ const Memories = () => {
   };
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center m-6 gap-2">
       {currentIndex > 0 && (
         <button
           type="button"

@@ -5,11 +5,7 @@ export const metadata = {
 };
 
 const BTS = () => {
-  return (
-    <div>
-      <Memories />
-    </div>
-  );
+  return <Memories />;
 };
 
 export default BTS;

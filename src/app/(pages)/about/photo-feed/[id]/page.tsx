@@ -20,8 +20,7 @@ export default async function PhotoPage({
         />
 
         <div className="bg-white py-4">
-          <h3>{photo.photographer}</h3>
-          <h3>{photo.location}</h3>
+          <h3>{photo.Description}</h3>
         </div>
       </div>
     </div>

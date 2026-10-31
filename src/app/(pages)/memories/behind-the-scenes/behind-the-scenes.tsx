@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const graduationPics = [
+const btsPics = [
   "/images/memories/behind-the-scenes/behind-the-scenes (1).jpg",
   "/images/memories/behind-the-scenes/behind-the-scenes (2).png",
   "/images/memories/behind-the-scenes/behind-the-scenes (4).jpg",
@@ -38,13 +38,13 @@ const Memories = () => {
   };
 
   const nextPicture = () => {
-    if (currentIndex < graduationPics.length - 1) {
+    if (currentIndex < btsPics.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   };
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center m-6 gap-2">
       {currentIndex > 0 && (
         <button
           type="button"
@@ -57,14 +57,14 @@ const Memories = () => {
       )}
 
       <Image
-        src={graduationPics[currentIndex]}
-        alt={`Graduation memory ${currentIndex + 1}`}
+        src={btsPics[currentIndex]}
+        alt={`BTS memory ${currentIndex + 1}`}
         width={400}
         height={250}
         className="border border-gray-300 rounded-lg object-cover md:object-contain"
       />
 
-      {currentIndex < graduationPics.length - 1 && (
+      {currentIndex < btsPics.length - 1 && (
         <button
           type="button"
           onClick={nextPicture}

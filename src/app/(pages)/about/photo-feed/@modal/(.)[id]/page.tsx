@@ -17,13 +17,12 @@ export default async function PhotoModal({
       <Image
         alt={photo.name}
         src={photo.src}
-        className="w-full object-cover aspect-square"
+        className="w-full h-[400px] object-cover aspect-square"
       />
 
       <div className="bg-white p-4">
         <h2 className="text-xl font-semibold">{photo.name}</h2>
-        <h3>{photo.photographer}</h3>
-        <h3>{photo.location}</h3>
+        <h3>{photo.Description}</h3>
       </div>
     </Modal>
   );

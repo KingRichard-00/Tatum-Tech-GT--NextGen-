@@ -4,12 +4,25 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const graduationPics = [
-  "/memories/bg.jpg",
-  "/memories/bg-1.jpg",
-  "/memories/bg-2.jpg",
-  "/memories/bg-3.jpg",
-  "/memories/bg-4.jpg",
+const presentationPics = [
+  "/images/memories/presentation/presentation (1).jpg",
+  "/images/memories/presentation/presentation (2).jpg",
+  "/images/memories/presentation/presentation (3).jpg",
+  "/images/memories/presentation/presentation (4).jpg",
+  "/images/memories/presentation/presentation (5).jpg",
+  "/images/memories/presentation/presentation (6).jpg",
+  "/images/memories/presentation/presentation (7).jpg",
+  "/images/memories/presentation/presentation (8).jpg",
+  "/images/memories/presentation/presentation (9).jpg",
+  "/images/memories/presentation/presentation (10).jpg",
+  "/images/memories/presentation/presentation (11).jpg",
+  "/images/memories/presentation/presentation (12).jpg",
+  "/images/memories/presentation/presentation (13).jpg",
+  "/images/memories/presentation/presentation (14).jpg",
+  "/images/memories/presentation/presentation (15).jpg",
+  "/images/memories/presentation/presentation (16).jpg",
+  "/images/memories/presentation/presentation (17).jpg",
+  "/images/memories/presentation/presentation (18).jpg",
 ];
 
 const Memories = () => {
@@ -22,13 +35,13 @@ const Memories = () => {
   };
 
   const nextPicture = () => {
-    if (currentIndex < graduationPics.length - 1) {
+    if (currentIndex < presentationPics.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   };
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center m-6 gap-2">
       {currentIndex > 0 && (
         <button
           type="button"
@@ -41,14 +54,14 @@ const Memories = () => {
       )}
 
       <Image
-        src={graduationPics[currentIndex]}
-        alt={`Graduation memory ${currentIndex + 1}`}
+        src={presentationPics[currentIndex]}
+        alt={`Presentation memory ${currentIndex + 1}`}
         width={500}
         height={350}
         className="h-[350px] w-[500px] rounded-lg object-cover"
       />
 
-      {currentIndex < graduationPics.length - 1 && (
+      {currentIndex < presentationPics.length - 1 && (
         <button
           type="button"
           onClick={nextPicture}
